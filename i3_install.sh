@@ -5,8 +5,12 @@
 # Autor: David Moya
 # Action: Instalación y configuración de i3 para ubuntu 16.*
 
-# Instalación Wine
+# Instalación 
 sudo apt install -y wine-stable curl
+
+# Install packets windows
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
 # Install python + anaconda + jupyter
 mkdir -p ~/Download/python/ && cd ~/Download/python && wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
