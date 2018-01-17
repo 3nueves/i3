@@ -100,14 +100,14 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 # variables para los wordspace
-set $workspace1 " 1  "
-set $workspace2 "2  "
-set $workspace3 "3  "
-set $workspace4 "4  "
-set $workspace5 "5  "
-set $workspace6 "6  " 
-set $workspace7 "7  " 
-set $workspace10 "10  "
+set $workspace1 "1: Terminals    "
+set $workspace2 "2: Google-chrome    "
+set $workspace3 "3: Firefox    "
+set $workspace4 "4: Evolution   "
+set $workspace5 "5: Id    "
+set $workspace6 "6: files    " 
+set $workspace7 "7: sky    " 
+set $workspace10 "10: Music    "
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -134,7 +134,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="sakura"] $workspace1
 assign [class="Google-chrome"] $workspace2
 assign [class="Firefox"] $workspace3
-#assign [class="Thunderbird"] $workspace4
+assign [class="Evolution"] $workspace4
 assign [class="Sublime_text"] $workspace5
 assign [class="Thunar"] $workspace6
 assign [class="Sky"] $workspace7
@@ -184,30 +184,24 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-#exec thunderbird 
+#exec evolution 
+exec evolution 
 exec_always feh --bg-scale /home/david/Imágenes/i3/fondo.jpg 
-#exec_always xrandr --output HDMI1 --off --output DP1 --primary --mode 1920x1080 --pos 1366x0 --rotate normal --output eDP1 --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off
-exec_always ~/.screenlayout/two_screen.sh
+exec_always xrandr --output HDMI1 --off --output DP1 --primary --mode 1920x1080 --pos 1366x0 --rotate normal --output eDP1 --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 exec_always compton -f
-#exec sky
+exec sky
 # Widow Colours
 #                       border  background text    indicator
-#client.focused          $base01 $base01    $base07 $base0F
-#client.focused_inactive $base02 $base02    $base03 $base0F
-#client.unfocused        $base02 $base02    $base03 $base0F
-#client.urgent           $base02 $base08    $base00 $base0F
-client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
-
+client.focused          $base01 $base01    $base07 $base0F
+client.focused_inactive $base02 $base02    $base03 $base0F
+client.unfocused        $base02 $base02    $base03 $base0F
+client.urgent           $base02 $base08    $base00 $base0F
 hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	font pango:System San Francisco Display 9, FontAwesome 9 
-    #status_command i3status
-    status_command i3blocks -c ~/.i3/i3blocks.conf 
+	font pango:System San Francisco Display 9, Awesome 9
+    status_command i3status
     colors {
       separator $base03
       background $base01

@@ -100,14 +100,15 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 # variables para los wordspace
-set $workspace1 " 1  "
-set $workspace2 "2  "
-set $workspace3 "3  "
-set $workspace4 "4  "
-set $workspace5 "5  "
-set $workspace6 "6  " 
-set $workspace7 "7  " 
-set $workspace10 "10  "
+set $workspace1 "1: Terminals    "
+set $workspace2 "2: Google-chrome    "
+set $workspace3 "3: Firefox    "
+#set $workspace4 "4: Evolution   "
+set $workspace4 "4    "
+set $workspace5 "5: Id    "
+set $workspace6 "6: files    " 
+set $workspace7 "7: sky    " 
+set $workspace10 "10: Music    "
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -184,12 +185,13 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-#exec thunderbird 
+exec thunderbird 
+#exec evolution 
 exec_always feh --bg-scale /home/david/Imágenes/i3/fondo.jpg 
 #exec_always xrandr --output HDMI1 --off --output DP1 --primary --mode 1920x1080 --pos 1366x0 --rotate normal --output eDP1 --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 exec_always ~/.screenlayout/two_screen.sh
 exec_always compton -f
-#exec sky
+exec sky
 # Widow Colours
 #                       border  background text    indicator
 #client.focused          $base01 $base01    $base07 $base0F
