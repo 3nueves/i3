@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # date: 30/10/2016
+# Update: 17/01/2018
 # Autor: David Moya
-# Action: Instalación y configuración de i3 para ubuntu 16.10
+# Action: Instalación y configuración de i3 para ubuntu 16.*
 
 # Instalación Wine
-sudo apt install -y wine-stable
+sudo apt install -y wine-stable curl
 
 # Install python + anaconda + jupyter
 mkdir -p ~/Download/python/ && cd ~/Download/python && wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
