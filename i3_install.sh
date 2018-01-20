@@ -8,10 +8,6 @@
 # Instalación 
 sudo apt install -y wine-stable curl
 
-# Install packets windows
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-
 # Install python + anaconda + jupyter
 mkdir -p ~/Download/python/ && cd ~/Download/python && wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 bash Anaconda3-5.0.1-Linux-x86_64.sh
@@ -30,6 +26,11 @@ sudo dpkg -i playerctl-0.5.0_amd64.deb
 
 # Instalción de feh para fondo de escritorio
 sudo apt install feh
+echo -e "Add path where it is img\n"
+read w
+cat << EOF >> ~/.config/i3/config
+feh --bg-scale $w/wallpaper.jpg 
+EOF
 
 # Instalación de para editar la configuración de las pantallas, recuerda que quiza haya que cambiar la linea donde está arandr, por la resolución 
 sudo apt install arandr
@@ -93,4 +94,13 @@ xrdb -merge ~/.Xresources
 # Instalación de la función opacity o transacciones para i3, compton con la opción -f activamos las transiciones
 sudo apt install compton
 
+# Other installations
+echo 'Do you want install windows packatges? [yes/no]'
+read var
 
+if[ $var -eq 'yes' ];
+then
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+fi
