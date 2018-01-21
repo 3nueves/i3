@@ -23,6 +23,12 @@ mkdir -p /tmp/install_i3
 cd /tmp/install_i3
 wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb
 sudo dpkg -i playerctl-0.5.0_amd64.deb
+cat << EOF >> ~/.config/i3/config
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+EOF
 
 # Instalción de feh para fondo de escritorio
 sudo apt install feh
