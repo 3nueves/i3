@@ -104,7 +104,7 @@ sudo apt install compton
 echo 'Do you want install windows packatges? [yes/no]'
 read var
 
-if[ $var -eq 'yes' ];
+if [ $var -eq 'yes' ];
 then
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
